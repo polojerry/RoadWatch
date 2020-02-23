@@ -1,10 +1,8 @@
 package com.polotechnologies.roadwatch.uiHost
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import com.polotechnologies.roadwatch.R
-import com.polotechnologies.roadwatch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
