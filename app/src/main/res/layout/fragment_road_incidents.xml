@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".fragments.RoadIncidentsFragment">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_over_speeding"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv_over_loading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_over_speeding"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/logo_road_safety_watch" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_over_speeding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/incident_over_speeding"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_over_speeding" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_over_loading"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_over_speeding"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_over_loading"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/logo_road_safety_watch" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_over_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/incident_over_loading"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_over_loading" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_drunken_driving"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_over_speeding">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_drunken_driving"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/logo_road_safety_watch" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_drunken_driving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/incident_drunken_driving"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_drunken_driving" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_careless_driving"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_drunken_driving"
+                app:layout_constraintTop_toBottomOf="@+id/cv_over_loading">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_careless_driving"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/logo_road_safety_watch" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_careless_driving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/incident_drunken_driving"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_careless_driving" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_un_road_worthy_vehicle"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_drunken_driving">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="1dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_un_road_worthy_vehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/logo_road_safety_watch" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_un_road_worthy_vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/incident_un_road_worthy_vehicle"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_un_road_worthy_vehicle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
