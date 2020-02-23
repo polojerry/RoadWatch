@@ -8,11 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 
     <style name="Widget.RoadSafetyWatch.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/colorPrimary</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/colorPrimary</item>
     </style>
+
+
 
 </resources>
