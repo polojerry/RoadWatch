@@ -26,13 +26,24 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         mAuth = FirebaseAuth.getInstance()
 
+        checkLoginStatus()
+        initiateClickListeners()
+        return mBinding.root
+    }
+
+    private fun checkLoginStatus() {
+        if(mAuth.currentUser != null){
+            findNavController().navigate(R.id.action_loginFragment_to_roadIncidentsFragment)
+        }
+    }
+
+    private fun initiateClickListeners() {
         mBinding.btnLoginSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
@@ -40,9 +51,6 @@ class LoginFragment : Fragment() {
         mBinding.btnLogin.setOnClickListener {
             login()
         }
-
-
-        return mBinding.root
     }
 
     private fun login() {

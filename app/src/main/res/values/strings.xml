@@ -13,4 +13,5 @@
     <string name="incident_drunken_driving">Drunken Driving</string>
     <string name="incident_un_road_worthy_vehicle">Unroadworthy Vehicle</string>
     <string name="toolbar_tittle_road_incidents">Road Incidents</string>
+    <string name="menu_sign_out">Sign Out</string>
 </resources>

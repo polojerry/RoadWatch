@@ -18,6 +18,12 @@
         <item name="boxStrokeColor">@color/colorPrimary</item>
     </style>
 
-
+    <style name="Widget.RoadSafetyWatch.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:textColor">@color/colorTextIcon</item>
+        <item name="titleTextColor">@color/colorTextIcon</item>
+        <item name="endIconTint">@color/colorTextIcon</item>
+        <item name="theme">@style/ThemeOverlay.MaterialComponents.Light</item>
+        <item name="colorButtonNormal">@color/colorTextIcon</item>
+    </style>
 
 </resources>
