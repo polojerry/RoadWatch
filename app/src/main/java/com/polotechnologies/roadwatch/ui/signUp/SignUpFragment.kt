@@ -81,13 +81,15 @@ class SignUpFragment : Fragment() {
     }
 
     private fun signUpUser() {
+        mBinding.progressSignUp.visibility = View.VISIBLE
         mAuth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener { task ->
-            if(task.isSuccessful){
+            mBinding.progressSignUp.visibility = View.GONE
+            if(task.isSuccessful) {
                 findNavController().navigate(R.id.action_signUpFragment_to_roadIncidentsFragment)
 
-            }else{
-                Toast.makeText(context, "Failed to Sign In...", Toast.LENGTH_SHORT).show()
             }
+        }.addOnFailureListener {
+            Toast.makeText(context, "Failed to Sign Up... " + it.message, Toast.LENGTH_SHORT).show()
         }
 
     }

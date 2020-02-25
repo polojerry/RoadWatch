@@ -18,15 +18,16 @@ import com.polotechnologies.roadwatch.databinding.FragmentLoginBinding
  */
 class LoginFragment : Fragment() {
 
-    private lateinit var mBinding : FragmentLoginBinding
+    private lateinit var mBinding: FragmentLoginBinding
     private lateinit var mAuth: FirebaseAuth
 
-    private var userEmail  = ""
+    private var userEmail = ""
     private var userPassword = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
 
         // Inflate the layout for this fragment
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
@@ -45,7 +46,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun login() {
-        if(validateInputs()){
+        if (validateInputs()) {
             loginUser()
         }
     }
@@ -57,18 +58,18 @@ class LoginFragment : Fragment() {
         userEmail = mBinding.etLoginEmail.text.toString()
         userPassword = mBinding.etLoginPassword.text.toString()
 
-        if(userEmail == ""){
+        if (userEmail == "") {
             isValid = false
             mBinding.etLoginEmail.error = "Email Required"
         }
 
-        if(userPassword == ""){
+        if (userPassword == "") {
             isValid = false
             mBinding.etLoginPassword.error = "Password Required"
         }
 
 
-        if(userEmail!="" && userPassword!="") isValid = true
+        if (userEmail != "" && userPassword != "") isValid = true
 
         return isValid
 
@@ -76,13 +77,17 @@ class LoginFragment : Fragment() {
     }
 
     private fun loginUser() {
+        mBinding.progressLogin.visibility = View.VISIBLE
+
         mAuth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener {
-            if(it.isSuccessful){
+            mBinding.progressLogin.visibility = View.GONE
+
+            if (it.isSuccessful) {
                 Toast.makeText(context, "Login Successful...", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_loginFragment_to_roadIncidentsFragment)
-            }else{
-                Toast.makeText(context, "Failed to Login...", Toast.LENGTH_SHORT).show()
             }
+        }.addOnFailureListener {
+            Toast.makeText(context, "Failed to Login..." + it.message, Toast.LENGTH_SHORT).show()
         }
 
 
