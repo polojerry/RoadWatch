@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "867260196352",
+    "firebase_url": "https://road-safety-watch.firebaseio.com",
+    "project_id": "road-safety-watch",
+    "storage_bucket": "road-safety-watch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867260196352:android:a7308b30f68264858c1ae5",
+        "android_client_info": {
+          "package_name": "com.polotechnologies.roadwatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "867260196352-irct9renarl80ekueehu43nrsmo36pfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.polotechnologies.roadwatch",
+            "certificate_hash": "42037a3aacc6d804271e7a0877fa9da09e9de82e"
+          }
+        },
+        {
+          "client_id": "867260196352-aj3ueiapk9o0ek8bt23j9emiqb1et4l0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApwVdY5HLBtPLF_Dx9QGQo0eGmZjiO9ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "867260196352-aj3ueiapk9o0ek8bt23j9emiqb1et4l0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

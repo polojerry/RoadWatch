@@ -1,4 +1,4 @@
-package com.polotechnologies.roadwatch.fragments
+package com.polotechnologies.roadwatch.ui.login
 
 
 import android.os.Bundle
@@ -31,14 +31,14 @@ class LoginFragment : Fragment() {
         }
 
         mBinding.btnLogin.setOnClickListener {
-            loginUser()
+            login()
         }
 
 
         return mBinding.root
     }
 
-    private fun loginUser() {
+    private fun login() {
         Toast.makeText(context, "Logging In.....", Toast.LENGTH_SHORT).show()
     }
 

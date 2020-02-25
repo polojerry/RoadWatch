@@ -12,4 +12,5 @@
     <string name="incident_over_loading">Over Loading</string>
     <string name="incident_drunken_driving">Drunken Driving</string>
     <string name="incident_un_road_worthy_vehicle">Unroadworthy Vehicle</string>
+    <string name="toolbar_tittle_road_incidents">Road Incidents</string>
 </resources>

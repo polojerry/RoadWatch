@@ -1,4 +1,4 @@
-package com.polotechnologies.roadwatch.fragments
+package com.polotechnologies.roadwatch.ui.roadIncidents
 
 
 import android.os.Bundle
@@ -11,14 +11,14 @@ import com.polotechnologies.roadwatch.R
 /**
  * A simple [Fragment] subclass.
  */
-class ReportRoadIncidentFragment : Fragment() {
+class RoadIncidentsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_road_incident, container, false)
+        return inflater.inflate(R.layout.fragment_road_incidents, container, false)
     }
 
 
