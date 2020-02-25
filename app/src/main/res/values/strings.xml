@@ -14,4 +14,11 @@
     <string name="incident_un_road_worthy_vehicle">Unroadworthy Vehicle</string>
     <string name="toolbar_tittle_road_incidents">Road Incidents</string>
     <string name="menu_sign_out">Sign Out</string>
+    <string name="toolbar_tittle_report_incidents">Report Incident</string>
+    <string name="hint_area_county">Area/ County</string>
+    <string name="hint_type_of_vehicle">Type of Vehicle</string>
+    <string name="hint_vehicle_number_plate">Vehicle Number Plate</string>
+    <string name="hint_vehicle_destination">Vehicle Destination</string>
+    <string name="btn_text_report_incident">Report</string>
+    <string name="hint_incidents">Incident</string>
 </resources>

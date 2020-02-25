@@ -38,10 +38,17 @@
         <action
             android:id="@+id/action_roadIncidentsFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_roadIncidentsFragment_to_reportRoadIncidentFragment"
+            app:destination="@id/reportRoadIncidentFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportRoadIncidentFragment"
         android:name="com.polotechnologies.roadwatch.ui.reportIncident.ReportRoadIncidentFragment"
         android:label="ReportRoadIncidentFragment"
-        tools:layout="@layout/fragment_report_road_incident" />
+        tools:layout="@layout/fragment_report_road_incident" >
+        <argument
+            android:name="roadIncident"
+            app:argType="string" />
+    </fragment>
 </navigation>

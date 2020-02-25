@@ -29,7 +29,6 @@
                     app:title="@string/toolbar_tittle_road_incidents"
                     tools:menu="@menu/menu_main" />
 
-
             </com.google.android.material.appbar.AppBarLayout>
 
 

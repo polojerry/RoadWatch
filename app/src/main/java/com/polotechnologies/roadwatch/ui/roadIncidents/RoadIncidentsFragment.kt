@@ -31,6 +31,7 @@ class RoadIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         mAuth = FirebaseAuth.getInstance()
 
         inflateMenu()
+        setClickListeners()
 
 
         return mBinding.root
@@ -40,6 +41,31 @@ class RoadIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         mBinding.toolbarRoadIncidents.inflateMenu(R.menu.menu_main)
         mBinding.toolbarRoadIncidents.setOnMenuItemClickListener(this)
     }
+
+    private fun setClickListeners() {
+        mBinding.cardOverSpeeding.setOnClickListener {
+            navigateToReport("Over Speeding")
+        }
+        mBinding.cardOverLoading.setOnClickListener {
+            navigateToReport("Over Loading")
+        }
+        mBinding.cardDrunkenDriving.setOnClickListener {
+            navigateToReport("Drunken Driving")
+        }
+        mBinding.cardCarelessOvertaking.setOnClickListener {
+            navigateToReport("Careless Overtaking")
+        }
+        mBinding.cardUnRoadworthyVehicle.setOnClickListener {
+            navigateToReport("Un-Roadworthy Vehicle")
+        }
+
+    }
+
+    private fun navigateToReport(roadIncident: String) {
+        val action = RoadIncidentsFragmentDirections.actionRoadIncidentsFragmentToReportRoadIncidentFragment(roadIncident)
+        findNavController().navigate(action)
+    }
+
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         when(item?.itemId){
