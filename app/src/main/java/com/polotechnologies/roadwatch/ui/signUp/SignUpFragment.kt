@@ -54,6 +54,7 @@ class SignUpFragment : Fragment() {
 
     private fun validateInputs(): Boolean {
         var isValid = false
+
         userEmail = mBinding.etSignUpEmail.text.toString()
         userPassword = mBinding.etSignUpPassword.text.toString()
         userName = mBinding.etSignUpUserName.text.toString()
@@ -65,12 +66,12 @@ class SignUpFragment : Fragment() {
 
         if(userPassword == ""){
             isValid = false
-            mBinding.etSignUpPassword.error = "Email Required"
+            mBinding.etSignUpPassword.error = "Password Required"
         }
 
         if(userName == ""){
             isValid = false
-            mBinding.etSignUpUserName.error = "Email Required"
+            mBinding.etSignUpUserName.error = "User Name Required"
         }
 
         if(userEmail!="" && userPassword!="" && userName!="") isValid = true
