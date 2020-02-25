@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/reportRoadIncidentFragment"
-        android:name="com.polotechnologies.roadwatch.ui.ReportRoadIncidentFragment"
+        android:name="com.polotechnologies.roadwatch.ui.reportIncident.ReportRoadIncidentFragment"
         android:label="ReportRoadIncidentFragment"
         tools:layout="@layout/fragment_report_road_incident" />
 </navigation>

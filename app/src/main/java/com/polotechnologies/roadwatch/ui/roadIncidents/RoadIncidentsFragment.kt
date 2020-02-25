@@ -45,7 +45,6 @@ class RoadIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         when(item?.itemId){
             R.id.action_sign_out -> signOut()
         }
-
         return true
     }
 
@@ -53,7 +52,6 @@ class RoadIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         mAuth.signOut()
         Toast.makeText(context, "Logged Out Successfully", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_roadIncidentsFragment_to_loginFragment)
-
     }
 
 
