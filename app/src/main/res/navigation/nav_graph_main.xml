@@ -65,5 +65,11 @@
         android:id="@+id/reportedIncidentsFragment"
         android:name="com.polotechnologies.roadwatch.ui.reportedIncidents.ReportedIncidentsFragment"
         android:label="fragment_reported_incidents"
-        tools:layout="@layout/fragment_reported_incidents" />
+        tools:layout="@layout/fragment_reported_incidents" >
+        <action
+            android:id="@+id/action_reportedIncidentsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

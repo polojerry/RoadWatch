@@ -22,7 +22,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar_road_incidents"
+                android:id="@+id/toolbar_reported_road_incidents"
                 style="@style/Widget.RoadSafetyWatch.Toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +49,16 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_over_speeding"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@drawable/badge_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_gravity="right|end|top"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_over_speeding"
