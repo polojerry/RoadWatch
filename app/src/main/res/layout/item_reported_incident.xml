@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="reportedIncident"
+            type="com.polotechnologies.roadwatch.dataModels.Report" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_incident"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Incident"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_incident"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_incident"
+                app:layout_constraintStart_toEndOf="@+id/tittle_incident"
+                app:layout_constraintTop_toTopOf="@+id/tittle_incident"
+                android:text="@{reportedIncident.incident}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_area_county"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Area/ County"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_incident" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_area_county"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_area_county"
+                app:layout_constraintStart_toEndOf="@+id/tittle_area_county"
+                app:layout_constraintTop_toTopOf="@+id/tittle_area_county"
+                android:text="@{reportedIncident.area_county}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_type_of_vehicle"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Type of Vehicle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_area_county" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_type_of_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_type_of_vehicle"
+                app:layout_constraintStart_toEndOf="@+id/tittle_type_of_vehicle"
+                app:layout_constraintTop_toTopOf="@+id/tittle_type_of_vehicle"
+                android:text="@{reportedIncident.type_of_vehicle}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_vehicle_number_plate"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Vehicle Number Plate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_type_of_vehicle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_vehicle_number_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_vehicle_number_plate"
+                app:layout_constraintStart_toEndOf="@+id/tittle_vehicle_number_plate"
+                app:layout_constraintTop_toTopOf="@+id/tittle_vehicle_number_plate"
+                android:text="@{reportedIncident.vehicle_number_plate}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_vehicle_destination"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Vehicle Destination"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_vehicle_number_plate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_vehicle_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_vehicle_destination"
+                app:layout_constraintStart_toEndOf="@+id/tittle_vehicle_destination"
+                app:layout_constraintTop_toTopOf="@+id/tittle_vehicle_destination"
+                android:text="@{reportedIncident.setVehicle_destination}" />
+
+            <Button
+                android:id="@+id/button_dispatch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:text="Dispatch "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_vehicle_destination" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

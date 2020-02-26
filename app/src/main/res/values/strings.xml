@@ -22,4 +22,7 @@
     <string name="btn_text_report_incident">Report</string>
     <string name="hint_incidents">Incident</string>
     <string name="toolbar_tittle_reported_road_incidents">Reported Incidents</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
