@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.polotechnologies.roadwatch.R
+import com.polotechnologies.roadwatch.dataModels.User
 import com.polotechnologies.roadwatch.databinding.FragmentSignUpBinding
 
 /**
@@ -20,6 +22,7 @@ class SignUpFragment : Fragment() {
 
     private lateinit var mBinding: FragmentSignUpBinding
     private lateinit var mAuth : FirebaseAuth
+    private lateinit var mDatabase: FirebaseFirestore
 
     private var userEmail  = ""
     private var userPassword = ""
@@ -33,6 +36,7 @@ class SignUpFragment : Fragment() {
         // Inflate the layout for this fragment
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up, container, false)
         mAuth = FirebaseAuth.getInstance()
+        mDatabase = FirebaseFirestore.getInstance()
 
         mBinding.btnSignUp.setOnClickListener {
             signUp()
@@ -85,6 +89,8 @@ class SignUpFragment : Fragment() {
         mAuth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener { task ->
             mBinding.progressSignUp.visibility = View.GONE
             if(task.isSuccessful) {
+                updateUserDetails()
+                Toast.makeText(context, "Signed Up Successfully... " , Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_signUpFragment_to_roadIncidentsFragment)
 
             }
@@ -94,6 +100,18 @@ class SignUpFragment : Fragment() {
 
     }
 
+    private fun updateUserDetails() {
+        val createdUser = mAuth.currentUser
+
+        val user = User(
+            createdUser!!.uid,
+            userName,
+            createdUser.email!!,
+            "user"
+        )
+        mDatabase.collection("users").add(user)
+
+    }
 
 
 }

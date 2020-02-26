@@ -2,15 +2,15 @@ package com.polotechnologies.roadwatch.ui.reportIncident
 
 
 import android.os.Bundle
-import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.navArgs
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.polotechnologies.roadwatch.R
 import com.polotechnologies.roadwatch.dataModels.Report
@@ -111,6 +111,7 @@ class ReportRoadIncidentFragment : Fragment() {
 
     private fun reportIncident() {
         Toast.makeText(context, "Reporting $reportingIncident.....", Toast.LENGTH_LONG).show()
+        mBinding.buttonReportIncident.isEnabled = false
 
         val incident = Report(
             mAuth.currentUser!!.uid,
@@ -118,8 +119,8 @@ class ReportRoadIncidentFragment : Fragment() {
             areaCounty,
             typeOfVehicle,
             vehicleNumberPlate,
-            vehicleDestination
-
+            vehicleDestination,
+            Timestamp.now()
         )
 
         mDatabase.collection("reportedIncidents")
