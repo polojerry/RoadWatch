@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.polotechnologies.roadwatch.dataModels.Report
 import com.polotechnologies.roadwatch.databinding.ItemReportedIncidentBinding
 
-class ReportedIncidentsRecyclerAdapter : ListAdapter<Report, ReportedIncidentsRecyclerAdapter.ReportedIncidentsViewHolder>(
-    HeroDiffCallBack()
+class ReportedIncidentsRecyclerAdapter(private val onClickListener: OnClickListener) : ListAdapter<Report, ReportedIncidentsRecyclerAdapter.ReportedIncidentsViewHolder>(
+    ReportedIncidentDiffCallBack()
 ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReportedIncidentsViewHolder {
@@ -18,6 +18,9 @@ class ReportedIncidentsRecyclerAdapter : ListAdapter<Report, ReportedIncidentsRe
 
     override fun onBindViewHolder(holder: ReportedIncidentsViewHolder, position: Int) {
         val reportedIncident = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(reportedIncident)
+        }
         holder.bind(reportedIncident)
 
     }
@@ -45,7 +48,7 @@ class ReportedIncidentsRecyclerAdapter : ListAdapter<Report, ReportedIncidentsRe
     }
 
 
-    class HeroDiffCallBack : DiffUtil.ItemCallback<Report>(){
+    class ReportedIncidentDiffCallBack : DiffUtil.ItemCallback<Report>(){
         override fun areItemsTheSame(oldItem: Report, newItem: Report): Boolean {
             return oldItem.report_key == newItem.report_key
         }

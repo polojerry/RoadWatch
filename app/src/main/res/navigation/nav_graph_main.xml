@@ -60,9 +60,6 @@
         <argument
             android:name="roadIncident"
             app:argType="string" />
-        <action
-            android:id="@+id/action_reportRoadIncidentFragment_to_reportedIncidentsListFragment"
-            app:destination="@id/reportedIncidentsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportedIncidentsFragment"
@@ -74,6 +71,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_reportedIncidentsFragment_to_reportedIncidentsListFragment"
+            app:destination="@id/reportedIncidentsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportedIncidentsListFragment"

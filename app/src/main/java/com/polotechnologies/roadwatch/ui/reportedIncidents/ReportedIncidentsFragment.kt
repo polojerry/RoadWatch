@@ -42,6 +42,7 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
 
         inflateMenu()
         setObservers()
+        setClickListeners()
         return mBinding.root
     }
 
@@ -72,6 +73,29 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         })
     }
 
+    private fun setClickListeners() {
+        mBinding.cardOverSpeeding.setOnClickListener {
+            navigateToReport("Over Speeding")
+        }
+        mBinding.cardOverLoading.setOnClickListener {
+            navigateToReport("Over Loading")
+        }
+        mBinding.cardDrunkenDriving.setOnClickListener {
+            navigateToReport("Drunken Driving")
+        }
+        mBinding.cardCarelessOvertaking.setOnClickListener {
+            navigateToReport("Careless Overtaking")
+        }
+        mBinding.cardUnRoadworthyVehicle.setOnClickListener {
+            navigateToReport("Un-Roadworthy Vehicle")
+        }
+
+    }
+
+    private fun navigateToReport(roadIncident: String) {
+        val action = ReportedIncidentsFragmentDirections.actionReportedIncidentsFragmentToReportedIncidentsListFragment(roadIncident)
+        findNavController().navigate(action)
+    }
 
     private fun inflateMenu() {
         mBinding.toolbarReportedRoadIncidents.inflateMenu(R.menu.menu_main)
