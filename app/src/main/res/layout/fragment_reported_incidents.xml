@@ -58,7 +58,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_over_speeding"
@@ -112,7 +113,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_over_loading"
@@ -165,7 +167,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_drunken_driving"
@@ -219,7 +222,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -271,7 +275,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_un_roadworthy_vehicle"

@@ -47,22 +47,27 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
 
     private fun setObservers() {
         mViewModel.overSpeedingCounter.observe(viewLifecycleOwner, Observer {overSpeedingCounter->
+            if(overSpeedingCounter > 0) mBinding.badgeOverSpeeding.visibility = View.VISIBLE
             mBinding.badgeOverSpeeding.text = overSpeedingCounter.toString()
         })
 
         mViewModel.overLoadingCounter.observe(viewLifecycleOwner, Observer {overLoadingCounter->
+            if(overLoadingCounter > 0) mBinding.badgeOverLoading.visibility = View.VISIBLE
             mBinding.badgeOverLoading.text = overLoadingCounter.toString()
         })
 
         mViewModel.drunkenDrivingCounter.observe(viewLifecycleOwner, Observer {drunkenDrivingCounter->
+            if(drunkenDrivingCounter > 0) mBinding.badgeDrunkenDriving.visibility = View.VISIBLE
             mBinding.badgeDrunkenDriving.text = drunkenDrivingCounter.toString()
         })
 
         mViewModel.carelessOvertakingCounter.observe(viewLifecycleOwner, Observer {carelessOvertakingCounter->
+            if(carelessOvertakingCounter > 0) mBinding.badgeCarelessOvertaking.visibility = View.VISIBLE
             mBinding.badgeCarelessOvertaking.text = carelessOvertakingCounter.toString()
         })
 
         mViewModel.unRoadWorthyVehicleCounter.observe(viewLifecycleOwner, Observer {unRoadWorthyVehicleCounter->
+            if(unRoadWorthyVehicleCounter > 0) mBinding.badgeUnRoadWorthyVehicle.visibility = View.VISIBLE
             mBinding.badgeUnRoadWorthyVehicle.text = unRoadWorthyVehicleCounter.toString()
         })
     }
