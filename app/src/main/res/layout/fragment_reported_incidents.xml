@@ -31,7 +31,6 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 
         </com.google.android.material.appbar.AppBarLayout>
 
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_over_speeding"
             android:layout_width="wrap_content"
@@ -59,8 +58,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                     android:gravity="center"
                     android:background="@drawable/badge_background"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_gravity="right|end|top"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_over_speeding"
@@ -105,6 +103,17 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_over_loading"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:textColor="@color/colorTextIcon"
+                    android:gravity="center"
+                    android:background="@drawable/badge_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_over_loading"
                     android:layout_width="150dp"
@@ -146,6 +155,17 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_drunken_driving"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:textColor="@color/colorTextIcon"
+                    android:gravity="center"
+                    android:background="@drawable/badge_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_drunken_driving"
@@ -190,6 +210,18 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_careless_overtaking"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:textColor="@color/colorTextIcon"
+                    android:gravity="center"
+                    android:background="@drawable/badge_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_careless_overtaking"
                     android:layout_width="150dp"
@@ -229,6 +261,17 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_un_road_worthy_vehicle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:textColor="@color/colorTextIcon"
+                    android:gravity="center"
+                    android:background="@drawable/badge_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_un_roadworthy_vehicle"

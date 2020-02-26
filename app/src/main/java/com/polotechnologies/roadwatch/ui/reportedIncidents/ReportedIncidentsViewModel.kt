@@ -2,13 +2,11 @@ package com.polotechnologies.roadwatch.ui.reportedIncidents
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.polotechnologies.roadwatch.dataModels.Report
-import java.lang.Exception
 
 class ReportedIncidentsViewModel(
     private val mDatabase: FirebaseFirestore,
@@ -19,39 +17,35 @@ class ReportedIncidentsViewModel(
     val overSpeedingCounter: LiveData<Int>
         get() = _overSpeedingCounter
 
-    private val _overLoadingCounter = MutableLiveData<LiveData<Int>>()
+    private val _overLoadingCounter = MutableLiveData<Int>()
     val overLoadingCounter: LiveData<Int>
-        get() = _overLoadingCounter.value!!
+        get() = _overLoadingCounter
 
-    private val _drunkenDrivingCounter = MutableLiveData<LiveData<Int>>()
+    private val _drunkenDrivingCounter = MutableLiveData<Int>()
     val drunkenDrivingCounter: LiveData<Int>
-        get() = _drunkenDrivingCounter.value!!
+        get() = _drunkenDrivingCounter
 
-    private val _carelessOvertakingCounter = MutableLiveData<LiveData<Int>>()
+    private val _carelessOvertakingCounter = MutableLiveData<Int>()
     val carelessOvertakingCounter: LiveData<Int>
-        get() = _carelessOvertakingCounter.value!!
+        get() = _carelessOvertakingCounter
 
-    private val _unRoadWorthyVehicleCounter = MutableLiveData<LiveData<Int>>()
+    private val _unRoadWorthyVehicleCounter = MutableLiveData<Int>()
     val unRoadWorthyVehicleCounter: LiveData<Int>
-        get() = _unRoadWorthyVehicleCounter.value!!
+        get() = _unRoadWorthyVehicleCounter
 
     init {
-        initValueToZero()
         fetchReportedCases()
-    }
-
-    private fun initValueToZero() {
-//        _overSpeedingCounter.value. = 0
-//        _overLoadingCounter.value = 0
-//        _drunkenDrivingCounter.value = 0
-//        _carelessOvertakingCounter.value = 0
-//        _unRoadWorthyVehicleCounter.value = 0
     }
 
     private fun fetchReportedCases() {
         val query = mDatabase.collection("reportedIncidents")
         val reportedCases = query.addSnapshotListener { querySnapshot, exception ->
             var counterOverSpeeding = 0
+            var counterLoadingCounter = 0
+            var counterDrunkenDriving = 0
+            var counterCarelessOvertaking = 0
+            var counterUnRoadWorthyVehicle = 0
+
 
             if (exception != null) {
                 Log.w("@@@Fetching Case@@@", "Listen failed.", exception)
@@ -65,10 +59,22 @@ class ReportedIncidentsViewModel(
                             counterOverSpeeding += 1
                             _overSpeedingCounter.value = counterOverSpeeding
                         }
-                        "Over Loading" -> overLoadingCounter.value!!.plus(1)
-                        "Drunken Driving" -> drunkenDrivingCounter.value!!.plus(1)
-                        "Careless Overtaking" -> carelessOvertakingCounter.value!!.plus(1)
-                        "Un-Roadworthy Vehicle" -> unRoadWorthyVehicleCounter.value!!.plus(1)
+                        "Over Loading" -> {
+                            counterLoadingCounter += 1
+                            _overLoadingCounter.value = counterLoadingCounter
+                        }
+                        "Drunken Driving" -> {
+                            counterDrunkenDriving += 1
+                            _drunkenDrivingCounter.value = counterDrunkenDriving
+                        }
+                        "Careless Overtaking" -> {
+                            counterCarelessOvertaking += 1
+                            _carelessOvertakingCounter.value = counterCarelessOvertaking
+                        }
+                        "Un-Roadworthy Vehicle" -> {
+                            counterUnRoadWorthyVehicle += 1
+                            _unRoadWorthyVehicleCounter.value = counterUnRoadWorthyVehicle
+                        }
                     }
 
                 }
