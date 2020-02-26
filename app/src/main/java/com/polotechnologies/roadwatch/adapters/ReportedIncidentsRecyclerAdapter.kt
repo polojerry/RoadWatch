@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.polotechnologies.roadwatch.dataModels.Report
 import com.polotechnologies.roadwatch.databinding.ItemReportedIncidentBinding
+import kotlinx.android.synthetic.main.item_reported_incident.view.*
 
 class ReportedIncidentsRecyclerAdapter(private val onClickListener: OnClickListener) : ListAdapter<Report, ReportedIncidentsRecyclerAdapter.ReportedIncidentsViewHolder>(
     ReportedIncidentDiffCallBack()
@@ -18,7 +19,7 @@ class ReportedIncidentsRecyclerAdapter(private val onClickListener: OnClickListe
 
     override fun onBindViewHolder(holder: ReportedIncidentsViewHolder, position: Int) {
         val reportedIncident = getItem(position)
-        holder.itemView.setOnClickListener {
+        holder.itemView.button_dispatch.setOnClickListener {
             onClickListener.onClick(reportedIncident)
         }
         holder.bind(reportedIncident)
