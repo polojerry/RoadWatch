@@ -39,6 +39,8 @@ class ReportedIncidentsViewModel(
 
     private fun fetchReportedCases() {
         val query = mDatabase.collection("reportedIncidents")
+            .whereEqualTo("acted_upon", false)
+
         val reportedCases = query.addSnapshotListener { querySnapshot, exception ->
             var counterOverSpeeding = 0
             var counterLoadingCounter = 0

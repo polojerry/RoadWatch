@@ -34,6 +34,7 @@ class ReportedIncidentsListViewModel(
     private fun fetchReportedCases() {
         val query = mDatabase.collection("reportedIncidents")
             .whereEqualTo("incident", reportedIncident)
+            .whereEqualTo("acted_upon", false)
 
         val reportedCases = query.addSnapshotListener { querySnapshot, exception ->
             val reportedCasesList: ArrayList<Report> = arrayListOf()
