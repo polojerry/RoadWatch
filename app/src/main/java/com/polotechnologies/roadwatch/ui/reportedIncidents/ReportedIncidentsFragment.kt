@@ -49,6 +49,22 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         mViewModel.overSpeedingCounter.observe(viewLifecycleOwner, Observer {overSpeedingCounter->
             mBinding.badgeOverSpeeding.text = overSpeedingCounter.toString()
         })
+
+        mViewModel.overLoadingCounter.observe(viewLifecycleOwner, Observer {overLoadingCounter->
+            mBinding.badgeOverLoading.text = overLoadingCounter.toString()
+        })
+
+        mViewModel.drunkenDrivingCounter.observe(viewLifecycleOwner, Observer {drunkenDrivingCounter->
+            mBinding.badgeDrunkenDriving.text = drunkenDrivingCounter.toString()
+        })
+
+        mViewModel.carelessOvertakingCounter.observe(viewLifecycleOwner, Observer {carelessOvertakingCounter->
+            mBinding.badgeCarelessOvertaking.text = carelessOvertakingCounter.toString()
+        })
+
+        mViewModel.unRoadWorthyVehicleCounter.observe(viewLifecycleOwner, Observer {unRoadWorthyVehicleCounter->
+            mBinding.badgeUnRoadWorthyVehicle.text = unRoadWorthyVehicleCounter.toString()
+        })
     }
 
 
