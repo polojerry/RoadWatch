@@ -113,8 +113,11 @@ class ReportRoadIncidentFragment : Fragment() {
         Toast.makeText(context, "Reporting $reportingIncident.....", Toast.LENGTH_LONG).show()
         mBinding.buttonReportIncident.isEnabled = false
 
+        val reportRef =mDatabase.collection("reportedIncidents").document()
+
         val incident = Report(
             mAuth.currentUser!!.uid,
+            reportRef.id,
             reportingIncident,
             areaCounty,
             typeOfVehicle,
@@ -123,8 +126,8 @@ class ReportRoadIncidentFragment : Fragment() {
             Timestamp.now()
         )
 
-        mDatabase.collection("reportedIncidents")
-            .add(incident)
+
+        reportRef.set(incident)
             .addOnCompleteListener {
                 if(it.isSuccessful){
                     Toast.makeText(context, "Successfully reported: $reportingIncident  ", Toast.LENGTH_SHORT).show()

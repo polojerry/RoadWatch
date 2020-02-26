@@ -9,9 +9,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.polotechnologies.roadwatch.R
+import com.polotechnologies.roadwatch.dataModels.Report
 import com.polotechnologies.roadwatch.databinding.FragmentReportedIncidentsBinding
 
 /**
@@ -21,6 +26,8 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
 
     private lateinit var mBinding : FragmentReportedIncidentsBinding
     private lateinit var mAuth:FirebaseAuth
+    private lateinit var mDatabase: FirebaseFirestore
+    private lateinit var mViewModel: ReportedIncidentsViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -28,11 +35,22 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
         // Inflate the layout for this fragment
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_reported_incidents, container, false)
         mAuth = FirebaseAuth.getInstance()
+        mDatabase = FirebaseFirestore.getInstance()
+
+        val factory = ReportedIncidentsViewModelFactory(mDatabase, activity!!.application)
+        mViewModel = ViewModelProvider(this, factory).get(ReportedIncidentsViewModel::class.java)
 
         inflateMenu()
-
+        setObservers()
         return mBinding.root
     }
+
+    private fun setObservers() {
+        mViewModel.overSpeedingCounter.observe(viewLifecycleOwner, Observer {overSpeedingCounter->
+            mBinding.badgeOverSpeeding.text = overSpeedingCounter.toString()
+        })
+    }
+
 
     private fun inflateMenu() {
         mBinding.toolbarReportedRoadIncidents.inflateMenu(R.menu.menu_main)
