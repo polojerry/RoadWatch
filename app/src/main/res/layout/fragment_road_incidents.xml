@@ -26,7 +26,7 @@
                     style="@style/Widget.RoadSafetyWatch.Toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:title="@string/toolbar_tittle_road_incidents"
+                    app:title="@string/toolbar_tittle_reported_road_incidents"
                     tools:menu="@menu/menu_main" />
 
             </com.google.android.material.appbar.AppBarLayout>
@@ -245,7 +245,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-
 
 </layout>
