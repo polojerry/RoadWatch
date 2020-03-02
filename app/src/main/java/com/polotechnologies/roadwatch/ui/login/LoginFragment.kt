@@ -1,6 +1,7 @@
 package com.polotechnologies.roadwatch.ui.login
 
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,7 +37,7 @@ class LoginFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseFirestore.getInstance()
 
-        checkLoginStatus()
+        checkLoginStatusFromPref()
 
         initiateClickListeners()
         return mBinding.root
@@ -52,14 +53,41 @@ class LoginFragment : Fragment() {
                     val userData : User = user[0]
 
                     if(userData.account_type == "admin"){
+                        savePreferenceUserAccount("admin")
                         findNavController().navigate(R.id.action_loginFragment_to_reportedIncidentsFragment)
                     }else{
+                        savePreferenceUserAccount("user")
                         findNavController().navigate(R.id.action_loginFragment_to_roadIncidentsFragment)
                     }
 
                 }
         }
     }
+
+    private fun savePreferenceUserAccount(accountType: String) {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString(getString(R.string.user_account_type), accountType)
+            commit()
+        }
+
+    }
+
+    private fun checkLoginStatusFromPref() {
+        if(mAuth.currentUser!=null){
+            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+            val defaultValue = "null"
+            val accountType = sharedPref.getString(getString(R.string.user_account_type), defaultValue)
+
+            when(accountType){
+                "admin"->findNavController().navigate(R.id.action_loginFragment_to_reportedIncidentsFragment)
+                "user"->findNavController().navigate(R.id.action_loginFragment_to_roadIncidentsFragment)
+            }
+        }else{
+            return
+        }
+    }
+
 
     private fun initiateClickListeners() {
         mBinding.btnLoginSignUp.setOnClickListener {

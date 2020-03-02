@@ -11,7 +11,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="false"
+        app:cardUseCompatPadding="true"
         app:contentPadding="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -146,14 +146,16 @@
                 actedUpon="@{reportedIncident}" />
 
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_dispatch"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Dispatch "
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tittle_acted_upon" />
+                app:layout_constraintTop_toBottomOf="@+id/tittle_acted_upon"
+                actionState="@{reportedIncident}"
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
