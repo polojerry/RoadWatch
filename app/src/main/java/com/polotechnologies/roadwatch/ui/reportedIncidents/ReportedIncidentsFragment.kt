@@ -1,5 +1,6 @@
 package com.polotechnologies.roadwatch.ui.reportedIncidents
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -110,9 +111,20 @@ class ReportedIncidentsFragment : Fragment(), Toolbar.OnMenuItemClickListener {
     }
 
     private fun signOut() {
+        savePreferenceUserAccount()
         mAuth.signOut()
         Toast.makeText(context, "Logged Out Successfully", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(R.id.action_reportedIncidentsFragment_to_loginFragment)
+        findNavController().navigate(R.id.action_roadIncidentsFragment_to_loginFragment)
     }
+
+    private fun savePreferenceUserAccount() {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString(getString(R.string.user_account_type), "null")
+            commit()
+        }
+
+    }
+
 
 }
