@@ -11,7 +11,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
+        app:cardUseCompatPadding="false"
         app:contentPadding="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -123,15 +123,37 @@
                 app:layout_constraintTop_toTopOf="@+id/tittle_vehicle_destination"
                 android:text="@{reportedIncident.vehicle_destination}" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tittle_acted_upon"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Acted Upon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_vehicle_destination" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_report_acted_upon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tittle_acted_upon"
+                app:layout_constraintStart_toEndOf="@+id/tittle_acted_upon"
+                app:layout_constraintTop_toTopOf="@+id/tittle_acted_upon"
+                actedUpon="@{reportedIncident}" />
+
+
             <Button
                 android:id="@+id/button_dispatch"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
                 android:text="Dispatch "
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_vehicle_destination" />
+                app:layout_constraintTop_toBottomOf="@+id/tittle_acted_upon" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
