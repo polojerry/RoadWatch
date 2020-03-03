@@ -26,10 +26,11 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 style="@style/Widget.RoadSafetyWatch.Toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="@string/toolbar_tittle_road_incidents"
+                app:title="@string/toolbar_tittle_reported_road_incidents"
                 tools:menu="@menu/menu_main"
                 app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-                android:theme="@style/AppTheme.DarkActionBar"/>
+                android:theme="@style/AppTheme.DarkActionBar"
+                app:collapseIcon="@drawable/ic_more_vert_black"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 

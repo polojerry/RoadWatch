@@ -77,9 +77,8 @@ class LoginFragment : Fragment() {
         if(mAuth.currentUser!=null){
             val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
             val defaultValue = "null"
-            val accountType = sharedPref.getString(getString(R.string.user_account_type), defaultValue)
 
-            when(accountType){
+            when(sharedPref.getString(getString(R.string.user_account_type), defaultValue)){
                 "admin"->findNavController().navigate(R.id.action_loginFragment_to_reportedIncidentsFragment)
                 "user"->findNavController().navigate(R.id.action_loginFragment_to_roadIncidentsFragment)
             }
@@ -87,7 +86,6 @@ class LoginFragment : Fragment() {
             return
         }
     }
-
 
     private fun initiateClickListeners() {
         mBinding.btnLoginSignUp.setOnClickListener {
@@ -122,11 +120,9 @@ class LoginFragment : Fragment() {
             mBinding.etLoginPassword.error = "Password Required"
         }
 
-
         if (userEmail != "" && userPassword != "") isValid = true
 
         return isValid
-
 
     }
 
@@ -143,7 +139,5 @@ class LoginFragment : Fragment() {
             Toast.makeText(context, "Failed to Login..." + it.message, Toast.LENGTH_SHORT).show()
         }
 
-
     }
-
 }
